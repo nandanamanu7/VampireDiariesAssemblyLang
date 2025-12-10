@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="customlangs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mars/mips/instructions/customlangs/MarioKart.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mars/mips/instructions/customlangs/DragonBallAssembly.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mars/mips/instructions/customlangs/MipsPlusPlus.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mars/mips/instructions/customlangs/McDonalds.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mars/mips/instructions/customlangs/ExampleCustomLanguage.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

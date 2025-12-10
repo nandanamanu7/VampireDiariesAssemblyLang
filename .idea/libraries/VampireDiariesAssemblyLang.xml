@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="VampireDiariesAssemblyLang">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/BuildCustomLang.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Mars.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

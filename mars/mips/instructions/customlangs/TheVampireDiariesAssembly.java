@@ -25,7 +25,7 @@ public class TheVampireDiariesAssembly extends CustomAssembly{
     protected void populate() {
         // summon (li)
         instructionList.add(
-                new BasicInstruction("summon $rt, $rs, $imm",
+                new BasicInstruction("summon $rt, imm",
                         "Summons (loads) the immediate value into a 32-bit register $rt (Summon a Character into Mystic Falls with set HP)\n",
                         BasicInstructionFormat.I_FORMAT,
                         "001000 00000 ttttt iiiiiiiiiiiiiiii",
@@ -193,7 +193,7 @@ public class TheVampireDiariesAssembly extends CustomAssembly{
                         }));
         // daylight_ring (unique)
         instructionList.add(
-                new BasicInstruction("daylight_ring $rt, $rs, $imm",
+                new BasicInstruction("daylight_ring $rt,0",
                         "Sets the first flag (bit 0) of the register to be 1, without affecting any other flags (daylight ring is given to the vampire, making immune to daylight)\n",
                         BasicInstructionFormat.I_FORMAT,
                         "001101 rrrrr 00000 0000000000000001",
@@ -206,7 +206,7 @@ public class TheVampireDiariesAssembly extends CustomAssembly{
                         }));
         // daytime (unique)
         instructionList.add(
-                new BasicInstruction("daytime $rt, $imm",
+                new BasicInstruction("daytime $rt, immediate",
                         "Checks if the first flag of the register is 1. \nIf not 1, then subtracts immediate value from vampire.\n (Daytime has risen, if the first flag of the register is 1, the vampire is safe as they have a daylight ring. If not, the vampire gets power subtracted since the sunlight is bad for vampire health)\n",
                         BasicInstructionFormat.I_FORMAT,
                         "001110 rrrrr 00000 iiiiiiiiiiiiiiii",
@@ -222,7 +222,7 @@ public class TheVampireDiariesAssembly extends CustomAssembly{
                         }));
         // vervain_ring (unique)
         instructionList.add(
-                new BasicInstruction("vervain_ring $rt, $rs, $imm",
+                new BasicInstruction("vervain_ring $rt,1",
                         "Sets the second flag (bit 1) of the register to be 1, without affecting any other flags (vervain is given to the human, making immune to vampire compulsion)\n",
                         BasicInstructionFormat.I_FORMAT,
                         "001101 00000 rrrrr 0000000000000010",
@@ -235,7 +235,7 @@ public class TheVampireDiariesAssembly extends CustomAssembly{
                         }));
         // compel (unique)
         instructionList.add(
-                new BasicInstruction("compel $rt, $rs, $imm",
+                new BasicInstruction("compel $rt,$rs,immediate",
                         "Sets the third flag (bit 2) of the register to be 1, without affecting any other flags if second flag is 0 (Checks if human has vervain protection (bit 1), and if human does not have protection, compels them, changing third flag/compulsion flag, meaning that they are under the influence of a vampire)\n",
                         BasicInstructionFormat.I_FORMAT,
                         "001111 rrrrr rrrrr 0000000000000100",
@@ -277,7 +277,7 @@ public class TheVampireDiariesAssembly extends CustomAssembly{
                         }));
         // grimoire (unique)
         instructionList.add(
-                new BasicInstruction("grimoire $rt, $rs, $imm",
+                new BasicInstruction("grimoire $rt,$rs,imm",
                         "Grimoire is used by a witch to allow a character to spell another character and inflict damage. If damage kills, then the killed flag(bit 8) is set to 1 and syscall prints out the character died by witch spell/grimoire.\n",
                         BasicInstructionFormat.I_FORMAT,
                         "001111 rrrrr sssss iiiiiiiiiiiiiiii",
